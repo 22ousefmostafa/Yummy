@@ -1,0 +1,71 @@
+# Project: Yumup - Meal Rating Flutter App
+# Architecture: Clean Architecture + BLoC
+
+## Tech Stack
+- State Management: flutter_bloc (BLoC pattern)
+- Backend: Supabase (Auth, DB, Storage, Realtime)
+- Navigation: GoRouter ^14.x
+- DI: GetIt + Injectable
+- Local Storage: Hive + SharedPreferences
+
+## Folder Structure - Every Feature Follows This Exactly:
+features/
+  feature_name/
+    data/
+      datasources/
+        feature_remote_source.dart      # Supabase calls only here
+      repositories/
+        feature_repository_impl.dart    # implements domain interface
+      models/
+        feature_model.dart              # fromJson / toJson
+    domain/
+      repositories/
+        feature_repository.dart         # abstract interface only
+      entities/
+        feature_entity.dart             # pure dart, no json
+      usecases/
+        get_feature_usecase.dart        # single responsibility
+    presentation/
+      bloc/
+        feature_bloc.dart
+        feature_event.dart
+        feature_state.dart
+      pages/
+        feature_screen.dart
+      widgets/
+        widget_name.dart
+
+## BLoC Rules
+1. Events are immutable - always use Equatable
+2. States are immutable - always use Equatable
+3. BLoC never calls Supabase directly - only through UseCases
+4. Every BLoC handles exactly 3 states: Loading / Success / Failure
+5. Use Cubit only for simple UI state (no business logic)
+
+## Clean Architecture Rules
+1. Domain layer has ZERO dependencies on Flutter or Supabase
+2. Entities are pure Dart classes - no fromJson/toJson
+3. Models extend or map to Entities
+4. UseCases have single method: call()
+5. Repository interface in domain, implementation in data
+
+## DI Rules (GetIt + Injectable)
+1. Register all dependencies in core/di/service_locator.dart
+2. Use @injectable on all classes
+3. Use @lazySingleton for repositories and datasources
+4. Use @injectable for usecases and blocs
+
+## Coding Rules
+1. Always use AppColors, AppTypography, AppSpacing - no hardcoded values
+2. Always use AppStrings - no hardcoded text
+3. Always use GoRouter - never Navigator.push directly
+4. Always use AppButton, AppTextField, AppCard from shared/widgets
+5. Supabase calls ONLY inside datasources files
+6. Business logic ONLY inside usecases files
+
+## File Path Rule
+Before EVERY code block write the exact path:
+// lib/features/auth/presentation/bloc/auth_bloc.dart
+
+## Response Language
+Answer in Arabic, code comments in English
