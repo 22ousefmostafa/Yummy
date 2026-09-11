@@ -69,55 +69,6 @@
     </div>
   </section>
 
-  <section>
-    <div class="eyebrow">Getting Started</div>
-    <pre><span class="c"># Clone the repository</span>
-git clone https://github.com/22ousefmostafa/Yummy.git
-cd Yummy
-
-<span class="c"># Install dependencies</span>
-flutter pub get
-
-<span class="c"># Generate code (Hive adapters, DI, etc.)</span>
-dart run build_runner build --delete-conflicting-outputs</pre>
-  </section>
-
-  <section>
-    <div class="eyebrow">Environment Setup</div>
-    <p>Create a <code style="background:var(--surface);padding:2px 6px;border-radius:4px;font-family:'IBM Plex Mono',monospace;color:var(--cream);">.env</code> file in the project root:</p>
-    <pre>SUPABASE_URL=your_supabase_url
-SUPABASE_ANON_KEY=your_supabase_anon_key</pre>
-  </section>
-
-  <section>
-    <div class="eyebrow">Running &amp; Building</div>
-    <pre>flutter run           <span class="c"># run the app</span>
-flutter build apk     <span class="c"># Android</span>
-flutter build ios     <span class="c"># iOS</span>
-flutter build web     <span class="c"># Web</span></pre>
-  </section>
-
-  <section>
-    <div class="eyebrow">Project Structure</div>
-    <div class="tree">yummy/
-├── <span class="dir">android/</span>        Android platform code
-├── <span class="dir">ios/</span>            iOS platform code
-├── <span class="dir">web/</span>            Web platform code
-├── <span class="dir">windows/</span>        Windows platform code
-├── <span class="dir">macos/</span>          macOS platform code
-├── <span class="dir">lib/</span>            Application source code
-├── <span class="dir">assets/</span>         Images, icons, and fonts
-├── <span class="dir">docs/</span>           Project documentation
-├── <span class="dir">supabase/</span>       Config, migrations, schema
-├── <span class="dir">test/</span>           Unit &amp; widget tests
-└── pubspec.yaml    Dependencies &amp; configuration</div>
-  </section>
-
-  <footer>
-    <span>Built by <a href="https://github.com/22ousefmostafa">Youssef Mostafa</a></span>
-    <span>Unlicensed</span>
-  </footer>
-
 </div>
 </body>
 </html>
