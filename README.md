@@ -12,7 +12,6 @@
 
   <div class="receipt">
     <div class="receipt-top">
-      <div class="receipt-eyebrow">FEEDBACK TICKET</div>
       <h1>Yummy</h1>
       <div class="receipt-sub">A restaurant survey app, built with Flutter</div>
       <div class="stars">★★★★★</div>
